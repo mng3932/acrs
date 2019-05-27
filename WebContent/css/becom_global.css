@@ -1,0 +1,64 @@
+@charset "gb2312";
+/******************************************************************
+* ID: 市区级学生卡管理系统
+* date created: 2009-07-02
+* latest changed : 2010-01-05 gaoweizhong
+* Description: 用于全局控制，包括控制全局的CSS重设、滚动条样式、公用超链接样式及类属性：区块、浮动、换行、溢出、Readonly等
+******************************************************************/
+/* CSS Document */
+
+/* scrollbar */
+html { scrollbar-face-color: #f8f7ec; scrollbar-shadow-color: #ffffff; scrollbar-3dlight-color: #b8bac9; scrollbar-arrow-color: #0066FF; scrollbar-track-color: #f4f4f1; scrollbar-darkshadow-color: #b8bac9; overflow-y:scroll; }
+
+/* CSS重设(全局控制)*/
+body { font-family: "宋体"; font-size:12px; background-color:#fff; text-align:left; padding:0px; margin:0px; margin-left:auto; margin-right:auto; }
+table, td, tr, th { font-size:12px; padding:0px; margin: 0px; }
+div, form, ul, ol, li, dl, dt, dd { padding:0px; margin: 0px; }
+h1, h2, h3, h4, h5, h6 { padding:0px; margin: 0px; text-align:left; }
+td { padding:0px; }
+img {
+	padding:0px;
+	margin: 0px;
+	border: none;
+blr:expression(this.onFocus=this.blur()); 	text-align: right;
+}
+textarea { overflow-y: scroll; overflow-x: scroll; }
+
+/* 公用超链 */
+a{ blr:expression(this.onFocus=this.blur()); }
+a:link { color: #005b8c; text-decoration: none; }
+a:visited { color: #3474b4; text-decoration: none; }
+a:hover { color:#666; text-decoration: underline; }
+
+/* 区块 */
+.hidden { display: none; } /* 隐藏 */
+
+/* 浮动 */
+.left{ float: left; clear:both; } /* 左浮动 */
+.right{ float: right; clear:both; } /* 右浮动 */
+.center{ text-align:center; margin-right: auto; margin-left: auto; } /* 居中 */
+.clear{ clear: both; visibility: hidden; } /* 清除浮动 */
+
+/* 换行与不换行 */
+.nowrap { white-space：nowrap; } /* 不换行 */
+.breakword { word-wrap: break-word; word-break: normal; overflow:hidden; } /* 自动换行 */
+.breakall{ white-space:normal; word-break:break-all; } /* 强制英文断行 */
+
+/* 溢出滚动条、溢出没有滚动条(未验证） */
+.overflow { overflow: scroll; }/* 溢出滚动条 */
+.overflow_y { overflow-y: scroll;!important}
+.overflow_x { overflow-x: scroll;!important }
+.overflow_vib { overflow: visible; }/* 可见 */
+.overflow_hid { overflow: hidden; }/* 隐藏 */
+.overflow_aut { overflow: auto; }/* 自动 */
+
+/* 文本只读 */
+.readonly { readonly:expression(this.readOnly=true) }
+
+/* 隐藏边框 */
+.noborder{ border:none; } 
+
+/* 间隔线 */
+.spaceline1{  margin:0px; padding:1px; } 
+.spaceline3{  margin:0px; padding:3px; } 
+.spaceline5{  margin:0px; padding:5px; } 

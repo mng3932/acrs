@@ -1,0 +1,18 @@
+.sort-icon {
+	background-repeat: no-repeat;
+	display: none;
+	height: 4px;
+	width: 13px;
+	margin-left: 3px;
+	vertical-align: middle;
+}
+
+.sort-asc {
+	background-image: url(../images/sort_asc.gif);
+	display: inline;
+}
+
+.sort-desc {
+	background-image: url(../images/sort_desc.gif);
+	display: inline;
+}

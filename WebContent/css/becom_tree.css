@@ -1,0 +1,82 @@
+@charset "gb2312";
+/******************************************************************
+* ID: 北京广播电视大学调查问卷
+* date created: 2009-07-02
+* latest changed : 2010-01-05 gaoweizhong
+* Description: 用于框架（frame、Iframe）中树形菜单的页面结构布局，主要以ID“#”为单位组织页面布局.
+******************************************************************/
+/* CSS Document */
+
+/*滚动条控制 */
+
+
+/*页面背景色 */
+body { background-color: #eaf6fe; }
+
+/*Tree主区域 */
+#tree { width:100%; }
+#treetitle { color:#339900; background-image:url(../images/tree_title.gif); width:140px; height:14px; text-align:left; border:#d9ddbc 0px solid; padding:48px 0 0 60px; }
+#treelist { background-image:url(../images/tree_center.gif); width:200px; height:300px; padding-left:0px 0px 20px 0px; border:#d9ddbc 0px solid; background-color:#FF0000; }
+#treelist table { margin-left:auto; margin-right:auto; }
+#treelist td { width:188px; valign:middle; text-align:left; }
+#treelist .td33  { height:33px; } 
+#treelist .td16  { color:#2786cf; font-size:14px; height:16px; } 
+#treefooter { color:#333;  background-image:url(../images/tree_footer.gif); width:200px; height:26px; border:#d9ddbc 0px solid; padding:15px 0px 0px 0px ;}
+
+/*Tree样式 */
+
+/*定义整个Tree ul菜单的行高和背景色*/
+#nav { line-height: 27px; background-color:#f3f3f3; width:180px; text-align:left; list-style-type: none; }
+#nav li:hover ul { left: auto; }
+#nav li.sfhover ul { left: auto; }
+#content { width: 140px; clear: left; }
+#nav ul.collapsed { display: none; }
+#parent { width:140px; background-color: #ffffff; text-align:center; margin-left: 1px; }
+
+/*一级目录*/
+#nav .lispace { width: 100%;  padding-left:25px; }
+#nav li { 
+	width: 180px;
+	padding-left: 0px;
+	float:left; 
+}
+#nav li .curSelectedNode{ 
+	color:#ff9900!important; 
+	background-color:#fff!important; 
+}
+
+#nav li a{
+	cursor:pointer;
+	padding-left: 20px;
+	display: block;
+	text-decoration: none;
+}	
+
+#nav li.level0{
+	/*background-color: #297bc6;*/
+	background-image:url(../images/bg_tree_hover2.gif);
+	padding-bottom: 0px;/*显示分割线*/
+	background-color: #ebf7ff;/*分割线颜色*/
+}
+#nav li.level0 a{
+	font-size:14px; 
+	color:#FFF; 	
+}
+
+#nav li.level1{
+	background-image:none;/*没有图片，设置背景色、分割线*/
+	padding-bottom: 1px;/*显示分割线*/
+	background-color: #ebf7ff;/*有分割线时显示的颜色*/
+}
+
+#nav li.level1 a {
+	background-color: #EBEBEB;
+	font-size:12px; 
+	color:#000;
+}
+
+#nav li.level1 a:hover { 
+	color:#ff9900; 
+	background-color:#fff; 
+}
+

@@ -1,0 +1,9 @@
+/com/
+/csrf_config.properties
+/db-conf-test.properties
+/db-conf.properties
+/hibernate.cfg.xml
+/log4j.xml
+/resource/
+/spy.properties
+/sys-conf.properties

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd"
+	default-autowire="byName" default-lazy-init="true">
+	
+	<!-- extend managers -->
+	
+	<!--init-->
+	<!--<bean id="initDictionUtil"
+		class="com.becom.acrs.webapp.util.InitDictionUtil" lazy-init="false" init-method="findAllSysDict">
+	</bean>	-->
+	<bean id="constantBean"
+		class="com.becom.acrs.common.ConstantBean" autowire="byName" lazy-init="false" init-method="init">
+		<property name="propertiesFile" value="sys-conf.properties"></property>
+		<property name="propertiesFileDB" value="db-conf.properties"></property>
+	</bean>    
+    <!-- DWR -->
+    <bean id="checkDateUtil" class="com.becom.acrs.webapp.util.CheckDateUtil"></bean>
+	<!-- Excel Export manager -->
+	<bean id="excelExportSupport"
+		class="org.nestframework.exporter.service.impl.ExcelExportSupportImpl" autowire="byName">
+	</bean>
+	<!-- Excel Import manager 
+	<bean id="excelImportSupport" class="org.nestframework.importer.impl.ExcelImportSupportImpl" 
+    	autowire="byName">
+    	<property name="importXmlRootPath" value="$[xmlRootPath]"></property>
+    </bean>-->
+    <!-- Menu manager -->
+	<bean id="menuManagerExt"
+		class="com.becom.acrs.service.ext.impl.MenuManagerExt" autowire="byName">
+	</bean>
+	
+	<bean id="projectManagerExt"
+		class="com.becom.acrs.service.ext.impl.ProjectManagerExt" autowire="byName">
+	</bean>
+
+	<!-- Upload Photo manager 
+	<bean id="uploadPhotoManagerExt"
+		class="com.becom.acrs.service.ext.impl.UploadPhotoManagerExt" autowire="byName">
+	</bean>-->
+</beans>

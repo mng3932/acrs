@@ -1,0 +1,62 @@
+@charset "gb2312";
+/******************************************************************
+* date created: 2009-07-02
+* latest changed : 2010-01-05 gaoweizhong
+* Description: 用于主界面的页面结构布局，主要以ID“#”为单位组织页面布局，包括：容器层#contanier、顶部（组）#top、菜单#menu、页面导航（组）#nav、检索#search、列表listview/listedit、提交区域（组）#submit、信息提示#msg、版权#copyrights。
+******************************************************************/
+/* CSS Document */
+
+/*主页面容器层 */
+#contanier { background-color: #fff; text-align: center; width: 100%; height: 100%; margin: 0px; padding-top: 0px; }
+
+/*包含顶部区域的logo和nav,不包括菜单*/
+#top { background-image: url(../images/bg_headertop.png); background-repeat:no-repeat; background-color:#a3d6ff; background-position: 1px 1px; text-align: center; width: 100%; height: 80px; margin: 0px; margin-left: auto; margin-right: auto; padding-top: 0px; }
+
+/*顶部区域中的名称及标识*/
+#logo { background-image: url(../images/logo.png); background-repeat: no-repeat; background-position: 0px 1px;  width:300px; height: 40px; text-align:left; float:left; padding:0px 0px 0px 0px; }
+#ver { float:left; width:100px; text-align:left; margin:0px; padding:0px; padding:55px 0px 0px 0px; }
+ 
+/*顶部区域导航*/
+#navhead { background-image: url(../images/bg_navhead.gif); background-repeat: repeat-x; background-position: 0px 1px; width: 450px; height: 41px; float:right; }
+#navhead_l { background-image: url(../images/cor_headertopleft.gif); background-repeat: no-repeat; background-position: 0px 1px;  width: 15px; height: 40px; float:left; margin: 0px; padding: 8px 0px 0px 0px;}
+#navhead_c { text-align:right; width: 405px; height: 40px; float:left; margin: 0px; padding: 8px 0px 0px 6px; text-align:left; }
+#navhead_r { background-image: url(../images/cor_headertopright.gif); background-repeat: no-repeat; background-position: 0px 1px; text-align:right; width: 20px; height: 40px; float:right; margin: 0px; padding: 8px 0px 0px 0px;}
+
+/*菜单*/
+#menu { background-image: url(../images/bg_menu.gif); width: 100%; height: 20px !important; height: 26px; float:left; margin: 0px; padding-top: 7px; margin-bottom:1px; }
+#menu_l { width: 4px; text-align:left; float:left; margin: 0px; padding: 0px 0px 0px 10px; }
+#menu_c { width: 700px; text-align:left; float:left; margin: 0px; padding: 0px 0px 0px 10px; }
+#menu_r { width: 200px; text-align:right; float:right; margin: 0px; padding: 0px 8px 0px 10px; }
+
+/*页面导航*/
+#nav { background-image:url(../images/bg_nav.gif); background-repeat: repeat-x; text-align:left; height: 26px; width: 100%; margin:0px; padding-top:5px; padding-left:0px; }
+#nav_pagetitle { background-image: url(../images/ico_pagetitle.gif); background-repeat: no-repeat; background-position: 10px 1px; height:18px; width: 430px; float: left; padding-top:4px; padding-left: 35px;	
+}
+#nav_pagenav { background-image: url(../images/ico_pagenav.gif); background-repeat: no-repeat; background-position: 4px 0px; text-align:right; width:210px; height:18px;  float: right; padding-top:4px; padding-right: 10px; }
+
+/*检索区域*/
+#search { background-image: url(../images/bg_search.gif ); width:98%; height:100%; text-align:left; height:auto; margin: 3px; padding:4px; border: 1px solid #e3e2df; }
+#search td { text-align:right; padding-right:0px; padding-left:2px; }
+#search .even { text-align:left; padding-right:8px; padding-left:0px; }
+#search .btn {  float: left; width: 98%; padding:3px 10px 3px 3px; margin:0px; text-align:right; border: 0px solid #cfd5be; }
+
+/*列表*/
+#list { width:98%; height:100%; background-color: #edf0e6; text-align:left; height:auto; margin: 3px; padding:4px; border: 1px solid #e3e2df; }
+#listview table { border: #fff double; border-collapse: collapse; }
+#listview tr { line-height: 18px; }
+#listview td { margin: 0px; padding: 0px 6px 0px 6px; border: 1px solid #d3e8fb; border-collapse: collapse; }
+#listview th {  color: #012850; font-weight:normal; background-color: #c9e1f7; text-align: center; height: 28px; border: 1px solid #fff; }
+#listview .foot { color: #0033cc; background-color: #e7edfa; margin: 0px; padding: 0px; border: 1px solid #ccc; }
+#listview .odd {color: #444; background-color: #fff; }
+#listview .even {color: #444; background-color: #f5f5f5; }
+#listview_page { text-align:left; padding:15px 0px 4px 15px; background-image:url(../images/bg_listview_page.gif); }
+
+/*提交区域*/
+#submit { width:98%; height:100%; background-color:#e3e6da;  text-align:left; height:auto; margin: 3px; padding:4px; border: 1px solid #cfd5be; }
+#submit_btn { text-align:right; }
+
+/*信息提示*/
+#msg { background-color: #FFFFFF; text-align:left; height: auto; margin-right:4px; margin-left:4px; padding-top:4px; padding-bottom:4px; }
+
+/* 版权 */
+#copyrights { color: #000; background-image:url(../images/bg_footer.gif); text-align: center; width:100%; height: 20px; float: left; margin-right:auto; margin-left:auto;margin: 0px; padding-top: 4px; }

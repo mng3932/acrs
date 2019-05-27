@@ -1,0 +1,15 @@
+eclipse.preferences.version=1
+encoding//WebContent/WEB-INF/app-taglib.tld=gbk
+encoding//WebContent/jquery/jquery.ztree.extend.js=UTF-8
+encoding//WebContent/js/date.js=UTF-8
+encoding//WebContent/js/validata.js=UTF-8
+encoding//conf/db-conf.properties=GBK
+encoding//conf/i18n/messages_zh_CN.properties=GBK
+encoding//conf/tpl/applicationContext-extservice.xml.ftl=UTF-8
+encoding//src/com/becom/acrs/webapp/util/FileUtil.java=UTF-8
+encoding//src/csrf_config.properties=UTF-8
+encoding//src/db-conf.properties=UTF-8
+encoding//src/sys-conf.properties=UTF-8
+encoding//test/db-conf-test.properties=GBK
+encoding/build.properties=GBK
+instance/org.eclipse.core.net/org.eclipse.core.net.hasMigrated=true

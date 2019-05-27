@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-11-8 17:09:44 by Hibernate Tools 3.2.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.becom.acrs.model.ProjectManager" table="PROJECT_MANAGER" >
+        
+        <id name="id" type="integer">
+            <column name="ID" precision="11" scale="0" />
+            <generator class="increment" />
+           <!--  <generator class="sequence">
+            	<param name="sequence">sq_project_manager</param>
+            </generator> -->
+        </id>
+        
+        <property name="projectname" type="string">
+            <column name="PROJECTNAME" length="60" />
+        </property>
+        <property name="modulename" type="string">
+            <column name="MODULENAME" length="60" />
+        </property>
+        <property name="modifycontent" type="string">
+            <column name="MODIFYCONTENT" length="1000" />
+        </property>
+        <property name="modifytime" type="java.util.Date">
+            <column name="MODIFYTIME" length="7" />
+        </property>
+        <property name="modifyperson" type="string">
+            <column name="MODIFYPERSON" length="60" />
+        </property>
+        <property name="remarks" type="string">
+            <column name="REMARKS" length="200" />
+        </property>
+        <property name="enclosure" type="string">
+            <column name="ENCLOSURE" length="200" />
+        </property>
+        <property name="enclosureurl" type="string">
+            <column name="ENCLOSUREURL" length="200" />
+        </property>
+    </class>
+</hibernate-mapping>

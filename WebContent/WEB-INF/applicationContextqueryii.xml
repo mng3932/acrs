@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd"
+	default-autowire="byName" default-lazy-init="true">
+	
+	<!-- query provider wrapper -->
+	<bean id="queryProvider" class="org.nestframework.commons.hibernate.ListMapQueryProvider" autowire="byName">
+		<property name="providers">
+			<list>
+				<ref bean="queryProviderMapping"/>
+			</list>
+		</property>
+	</bean>
+	
+	<!--  
+	<bean id="queryProvider" class="org.nestframework.commons.hibernate.QueryProviderWrap" autowire="byName">
+		<property name="queryProvider" ref="queryProviderMapping"></property>
+	</bean>
+	-->
+	
+	<!-- query provider mapping implement -->
+	<bean id="queryProviderMapping" class="org.nestframework.commons.hibernate.QueryProviderMappingImpl">
+		<property name="queryMap">
+			<map>
+				<!-- 获取数据库时间 ，根据当前在用的数据库，将key后面的.XXXXXX去掉，
+				不在用的key可以删掉，或在后面添加.XXXX-->
+				<!-- 获取数据库时间 (Oracle)-->
+				<entry key="ProjectManagerExt.findAllProjectManager.query"><value><![CDATA[
+					select * from project_manager
+				]]></value></entry>
+				<!-- 获取数据库时间 (sqlserver)-->
+				<entry key="getCurrentDateOfDatabase.sqlserver"><value><![CDATA[
+					SELECT getdate()
+				]]></value></entry>
+				<!-- 获取数据库时间 (mysql) 当前在用-->
+				<entry key="getCurrentDateOfDatabase"><value><![CDATA[
+					select SYSDATE()
+				]]></value></entry>
+			</map>
+		</property>
+	</bean>
+	
+	<!-- hql can also be stored in database(or anywhere, just implement IQueryProvider interface) -->
+	<!-- Sample DDL for query storage table:
+		CREATE TABLE  `query` (
+		  `name` varchar(64) NOT NULL default '',
+		  `hql` text NOT NULL,
+		  PRIMARY KEY  (`name`)
+		) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='dynamic hqls';
+	 -->
+	<bean id="queryProviderJdbc" class="org.nestframework.commons.hibernate.QueryProviderJdbcImpl" autowire="byName">
+		<property name="sql" value="select hql from query where name = ?"/>
+	</bean>
+</beans>

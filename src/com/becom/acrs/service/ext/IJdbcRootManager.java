@@ -1,0 +1,14 @@
+/**
+ * 
+ */
+package com.becom.acrs.service.ext;
+
+import org.nestframework.commons.hibernate.IJdbcManager;
+
+/**
+ * @author audin
+ *
+ */
+public interface IJdbcRootManager extends IJdbcManager {
+
+}

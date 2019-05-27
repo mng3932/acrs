@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="GBK"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd" >
+
+<hibernate-reverse-engineering>
+
+	<type-mapping>
+		<sql-type jdbc-type="INTEGER" hibernate-type="integer" />
+		<sql-type jdbc-type="INTEGER" precision='1'
+			hibernate-type="boolean" />
+		<sql-type jdbc-type="NUMERIC" precision='1'
+			hibernate-type="boolean" />
+		<sql-type jdbc-type="SMALLINT" precision='1'
+			hibernate-type="boolean" />
+		<sql-type jdbc-type="TINYINT" precision='1'
+			hibernate-type="boolean" />
+		<sql-type jdbc-type="INTEGER" precision='22' scale="0" 
+			hibernate-type="integer" />	
+		<sql-type jdbc-type="VARCHAR" 
+			hibernate-type="string"/>
+		<sql-type jdbc-type="CLOB" 
+			hibernate-type="org.springframework.orm.hibernate3.support.ClobStringType"/>
+		<sql-type jdbc-type="DATE" 
+			hibernate-type="timestamp"/>
+		
+	</type-mapping>
+
+	<!-- BIN$ is recycle bin tables in Oracle -->
+	<table-filter match-name="BIN$.*" exclude="true" />
+	<!-- Exclude DoNotWantIt from all catalogs/schemas -->
+	<table-filter match-name="DoNotWantIt" exclude="true" />
+	<!-- exclude all tables from the schema SCHEMA in catalog BAD. -->
+	<table-filter match-catalog="BAD" match-schema="SCHEMA"
+		match-name=".*" exclude="true" />
+		
+		
+	<!-- 过滤异动状态表和成绩等级表 -->
+ <!--  	<table-filter match-schema="GGXJ" match-name="GRADE" exclude="true" />
+	<table-filter match-schema="GGXJ" match-name="YDZT" exclude="true" />  -->
+	
+	
+	<!-- 过滤其他表 -->
+	<table-filter  match-schema="GGXJ" match-name=".*" exclude="true" />
+	<table-filter  match-schema="SCHOOLOFBASICDATA" match-name=".*" exclude="true" />
+	
+	<table-filter  match-schema="BI" match-name=".*" exclude="true" />
+	<table-filter  match-schema="PM" match-name=".*" exclude="true" />
+	<table-filter  match-schema="SH" match-name=".*" exclude="true" />
+	<table-filter  match-schema="IX" match-name=".*" exclude="true" />
+	<table-filter  match-schema="OE" match-name=".*" exclude="true" />
+	<table-filter  match-schema="HR" match-name=".*" exclude="true" />
+	
+	<table-filter  match-schema="SCOTT" match-name=".*" exclude="true" />
+	<table-filter  match-schema="OWBSYS_AUDIT" match-name=".*" exclude="true" />
+	<table-filter  match-schema="OWBSYS" match-name=".*" exclude="true" />
+	<table-filter  match-schema="APEX_030200" match-name=".*" exclude="true" />
+	<table-filter  match-schema="APEX_PUBLIC_USER" match-name=".*" exclude="true" />
+	<table-filter  match-schema="FLOWS_FILES" match-name=".*" exclude="true" />
+	<table-filter  match-schema="MGMT_VIEW" match-name=".*" exclude="true" />
+	<table-filter  match-schema="SYSMAN" match-name=".*" exclude="true" />
+	<table-filter  match-schema="SPATIAL_CSW_ADMIN_USR" match-name=".*" exclude="true" />
+	<table-filter  match-schema="SPATIAL_WFS_ADMIN_USR" match-name=".*" exclude="true" />
+	<table-filter  match-schema="MDDATA" match-name=".*" exclude="true" />
+	<table-filter  match-schema="MDSYS" match-name=".*" exclude="true" />
+	<table-filter  match-schema="SI_INFORMTN_SCHEMA" match-name=".*" exclude="true" />
+	<table-filter  match-schema="ORDPLUGINS" match-name=".*" exclude="true" />
+	<table-filter  match-schema="ORDDATA" match-name=".*" exclude="true" />
+	<table-filter  match-schema="ORDSYS" match-name=".*" exclude="true" />
+	<table-filter  match-schema="OLAPSYS" match-name=".*" exclude="true" />
+	<table-filter  match-schema="ANONYMOUS" match-name=".*" exclude="true" />
+	<table-filter  match-schema="XDB" match-name=".*" exclude="true" />
+	<table-filter  match-schema="CTXSYS" match-name=".*" exclude="true" />
+	<table-filter  match-schema="EXFSYS" match-name=".*" exclude="true" />
+	<table-filter  match-schema="XS$NULL" match-name=".*" exclude="true" />
+	<table-filter  match-schema="WMSYS" match-name=".*" exclude="true" />
+	<table-filter  match-schema="APPQOSSYS" match-name=".*" exclude="true" />
+	<table-filter  match-schema="DBSNMP" match-name=".*" exclude="true" />
+	<table-filter  match-schema="ORACLE_OCM" match-name=".*" exclude="true" />
+	<table-filter  match-schema="DIP" match-name=".*" exclude="true" />
+	<table-filter  match-schema="OUTLN" match-name=".*" exclude="true" />
+	<table-filter  match-schema="SYSTEM" match-name=".*" exclude="true" />
+	<table-filter  match-schema="SYS" match-name=".*" exclude="true" />
+	
+
+	<!-- 可用的主键生成方式
+		hilo 高低位算法 :  使用时要建成一个单行单列的表，利用列的值根据算法来生成
+		increment:  只用于测试用，此操作只能限于一个线程操作
+		sequence: 针对oracle 数据库来生成的ID规则
+		seqhilo: 利用 sequence 当作种子来生成
+		uuid:  利用IP和时间来生成唯一的
+		identity:  针对 mysql db2 sysbase 等不同的底层数据库方言来生成
+		native: 跨数据库平台的生成规则， 让自己去判断数据库来生成(identity ,  sequence , hilo 三种选)
+		assigned： 自定义的,意思就是自己要在程序中手动的指定值
+		foreign:借用别的表的主键来生成ID
+		descriminator:  继承关系映射时使用,整个层次一张表的建模时使用
+	 -->
+	<!-- example for define customer key -->
+	 
+
+</hibernate-reverse-engineering>
